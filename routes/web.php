@@ -34,6 +34,12 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::resource('/users', UserController::class);
 });
 
+// group of routes for authenticated users
+Route::middleware(['auth'])->group(function () {
+    // categories
+    
+});
+
 Route::get('/404', function () {
     return view('404'); // Or your 404 controller action
 })->name('404');
